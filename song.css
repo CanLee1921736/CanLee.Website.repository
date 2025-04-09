@@ -9,7 +9,7 @@
   line-height: 6vw;
   margin: 3vw auto;
   border: 4vw solid transparent; border-image-slice: 245 ;
-  border-image-width: 4vw ; border-image-source: url('image/flame.png') ;
+  border-image-width: 4vw ; border-image-source: url('image/frame.png') ;
   border-image-repeat: repeat; border-image-outset: 0; /* 平均分配圖案邊框 */
   position: relative
 }
