@@ -1,0 +1,213 @@
+.bg{background-color: cornsilk;}
+.header{ background-color: black;}
+.myweb{
+  height: 6vw; width: 85%; 
+  font-size: 4vw; font-weight: bold;
+  color:chocolate;
+  background-color: cornsilk;
+  text-align: center;
+  line-height: 6vw;
+  margin: 3vw auto;
+  border: 4vw solid transparent; border-image-slice: 245 ;
+  border-image-width: 4vw ; border-image-source: url('image/frame.png') ;
+  border-image-repeat: repeat; border-image-outset: 0; /* 平均分配圖案邊框 */
+  position: relative
+}
+
+.song_imformation-container{
+  width: 90%;
+  margin-top: 0.5vw auto;
+  margin-right: 1vw auto;
+  margin-bottom: 1.5vw auto;
+  margin-left: 1vw auto;
+  padding: 1vw;
+  position: relative
+}
+.song-title{
+  text-align: center;
+  font-size: 5vw;
+  font-weight: bold;
+}
+.song-info{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vw
+}
+.left-info {
+  text-align: left;
+  font-size: 2vw
+}
+
+.right-info {
+  text-align: right;
+  font-size: 2vw
+}
+.audio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
+  max-width: 90%;
+}
+
+/* 若是使用 <audio> 標籤 */
+.audio-wrapper audio {
+  width: 30vw; /* 預設寬度 */
+  max-width: 100%; /* 確保在手機不會超過容器 */
+}
+
+/*歌詞區域*/
+.lyrics-section{
+  width: 65vw;
+  margin-top: 1.5vw ; margin-right: auto; margin-bottom: 1.5vw; margin-left: 35vw; /* 對左靠齊*/
+  text-align: left; /*靠左對齊*/
+  background-color: cornsilk;
+  border-left: 4px solid transparent;
+  font-size: 2vw;
+  line-height: 3vw; /* 行距 */
+  transition: height 0.3s ease;
+  overflow: hidden
+}
+.lyrics-section > div {
+  margin: 0.3vw 0 /*每句歌詞的外邊距*/
+}
+.lyrics-section .note {
+  font-size: 1vw;
+  color: gray;
+  font-style: italic;
+}
+.score-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 確保每行 3 張圖片 */
+  column-gap: 1rem; /* 圖片間的水平間距 */
+  row-gap: 2rem;    /* 圖片間的垂直間距 */
+  padding: 0 0.5rem; /* 左右邊各留 0.5rem（間距的一半） */
+  width: 100%; /* 容器寬度為 100% */
+  margin: 0.5rem auto;
+  box-sizing: border-box;
+}
+
+.score-gallery img {
+  width: 100%; /* 確保圖片寬度填滿每個格子 */
+  height: auto; /* 高度自動調整 */
+  display: block;
+}
+
+/* 圖片容器 */
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+}
+
+/* 連結樣式 */
+.zoom-link {
+  display: block;
+  text-align: center;
+  margin-top: 1vw;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+/* 彈出視窗背景 */
+.overlay {
+  display: none;               /* 初始隱藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+  z-index: 1000;
+  overflow: auto;
+  justify-content: center;  /* 水平置中 */
+  align-items: center;      /* 垂直置中 */
+}
+
+/* 彈出圖片容器 */
+.popup {
+  position: relative;
+  max-width: 80%;
+  max-height: 80vh;
+  margin: 5% auto;
+  padding: 1.5vw;
+  background-color: transparent;
+  border-radius: 1vw;
+
+}
+
+/* 彈出圖片 */
+.popup img {
+  width: 80%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 1vw;
+}
+
+/* 關閉按鈕 */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  font-size: 4vw;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #bbb}
+  /*響應式設計-頭版*/
+  @media (min-width: 1440px) {
+    .myweb {
+      height: 6vw;
+      font-size: 4vw;
+      margin: 3vw auto;
+      border: 5vw solid transparent; 
+      border-image-width: 5vw    
+    }
+    .song_imformation-container{
+      width: 90%;
+      margin: 2vw auto;
+      padding: 2vw;
+      position: relative
+    }
+  }
+
+  @media (max-width: 800x) {
+    .myweb {
+      height: 6vw;
+      font-size: 4vw;
+      margin: 3vw auto;
+      border: 5vw solid transparent; 
+      border-image-width: 5vw         
+    }
+    .song_imformation-container{
+      width: 90%;
+      margin: 2vw auto;
+      padding: 2vw;
+      position: relative
+    }
+  }
+  @media (max-width: 480x) {
+    .myweb {
+      height: 30px;
+      font-size: 20px;
+      margin: 15px auto;
+      border: 20px solid transparent; border-image-slice: 122 ;
+      border-image-width: 20px       
+    }
+    .song_imformation-container{
+      width: 90%;
+      margin: 3vw auto;
+      padding: 3vw;
+    }
+    .song-title{
+      font-size: 7vw;
+    }
+    .audio-wrapper {
+      width: 40vw;
+      height: 50%;
+    }
+  }
