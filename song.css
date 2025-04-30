@@ -42,11 +42,22 @@
   text-align: right;
   font-size: 2vw
 }
+.right-info .audio-row {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  gap: 0.5rem;
+}
+
+.right-info audio {
+  width: 300px; /* 或你可改成更小的寬度，適應手機 */
+  max-width: 100%;
+}
 .audio-wrapper {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin: 1rem auto;
+  gap: 0.5rem;
+  margin: 0.5rem auto;
   max-width: 90%;
 }
 
@@ -209,5 +220,12 @@
     .audio-wrapper {
       width: 40vw;
       height: 50%;
+    }
+  }
+  @media (max-width: 600px) {
+    .right-info audio {
+      align-items: center;
+      width: 100%;
+      height: 30px;
     }
   }
